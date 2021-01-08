@@ -1,0 +1,18 @@
+@startuml
+TemplateController -> TemplateService:calls createUser
+TemplateService -> UserController:calls addUser
+UserController -> UserService:calls addingUser
+UserService ->UserService:User added
+TemplateController -> TemplateService:calls retreiveUserById
+TemplateService -> UserController:calls getId
+UserController -> UserService:calls gettingUserById
+UserService ->UserController:Returing the object
+UserController -> TemplateService:Returning the object
+TemplateService ->TemplateController:Returing the object
+TemplateController -> TemplateService:calls retreiveAllUsers
+TemplateService -> UserController:calls allUsers
+UserController -> UserService:calls gettingAllUsers
+UserService ->UserController:Returing Objects of all users
+UserController -> TemplateService:Returing Objects of all users
+TemplateService ->TemplateController:Returing Objects of all users
+@enduml
